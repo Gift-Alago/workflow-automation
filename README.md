@@ -43,8 +43,10 @@ A Text Parser scans the ticket description and determines priority:
 - Low Priority → Contains word like "how", "setup", "request", "feedback", or "question", typically indicating general inquirires.These are often questions already covered in the FAQ, making them suitable for self-service resolution.
 
 3️⃣ **Automated Actions**
+**(Make.com Modules)**
  
  - **High-Priority Tickets:** For high-priority tickets, a personalized email is sent to the customer immediately, assuring them that a ticket has been created and its already being looked into.
+   [Email sent to customer](assets/email response.png)
 
 **Slack Alert to Support Team:** Once the ticket has been created,details of the ticket is sent to high-priority slack channel.
 
