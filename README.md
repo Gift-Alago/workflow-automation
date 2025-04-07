@@ -51,6 +51,8 @@ A Text Parser scans the ticket description and determines priority:
 
 **Slack Alert to Support Team:** Once the ticket has been created,details of the ticket is sent to high-priority slack channel.
 
+   ![Email sent to customer](./assets/slack-alert.png)
+
 - **Medium-Priority Tickets:** For medium-priority tickets a personalized email is sent to the customer immediately, assuring them that a ticket has been created and its already being looked into.
 
 **Slack Notification:** Once the ticket has been created,details of the ticket is sent to medium-priority slack channel.
