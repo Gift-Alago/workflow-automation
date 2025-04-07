@@ -38,94 +38,105 @@ The response is stored in Google Sheets automatically.
 
 2️⃣ **Data Processing & Categorization**
 A Text Parser scans the ticket description and determines priority:
-- High Priority → Contains words like “urgent” or “critical.”
-- Medium Priority → Contains words like “issue” or “bug.”
-- Low Priority →contains word like                , typically indicating general inquirires.These are ofte questions already covered in the FAQ,
-   making them suitable for self-service resolution.
+- High Priority → Contains words like "not working", "urgent", "site is down", or "can't access".
+- Medium Priority → Contains words like "error", "broken", "glitch", or "not displaying correctly".
+- Low Priority → Contains word like "how", "setup", "request", "feedback", or "question", typically indicating general inquirires.These are often questions already covered in the FAQ, making them suitable for self-service resolution.
 
 3️⃣ **Automated Actions**
  
  - **High-Priority Tickets:** For high-priority tickets, a personalized email is sent to the customer immediately, assuring them that a ticket has been created and its already being looked into.
 
- **Email to Customer:**
-
-"Hello {{First Name}}  {{Last Name}},
-
-Thank you for reaching out to our support team. A ticket has been created for your request, and we’re already looking into it. We sincerely apologize for any inconvenience this may have caused.
-
-To help us resolve your issue as quickly as possible, could you please provide the following details?
-
-A brief description of the issue
-
-Any error messages you’re seeing (if applicable)
-
-Steps you’ve already tried to resolve it
-
-Our team is on it, and we’ll keep you updated every step of the way. If you have any additional details to share, feel free to reply to this email.
-
-We appreciate your patience and will do our best to resolve this as quickly as possible.
-
-Best regards,"
-
 **Slack Alert to Support Team:** Once the ticket has been created,details of the ticket is sent to high-priority slack channel.
 
 - **Medium-Priority Tickets:** For medium-priority tickets a personalized email is sent to the customer immediately, assuring them that a ticket has been created and its already being looked into.
 
-
-**Email to Customer:** 
-
-"Hello {{First Name}}  {{Last Name}},
-
-Thank you for reaching out to our support team. A ticket has been created for your request, and we’re already looking into it. We sincerely apologize for any inconvenience this may have caused.
-
-To help us resolve your issue as quickly as possible, could you please provide the following details?
-
-A brief description of the issue
-
-Any error messages you’re seeing (if applicable)
-
-Steps you’ve already tried to resolve it
-
-Our team is on it, and we’ll keep you updated every step of the way. If you have any additional details to share, feel free to reply to this email.
-
-We appreciate your patience and will do our best to resolve this as quickly as possible.
-
-Best regards,"
-
-
 **Slack Notification:** Once the ticket has been created,details of the ticket is sent to medium-priority slack channel.
-
 
 **Low-Priority Tickets:**
 When a low-priority ticket is detected, an automated email response is sent, providing a link to the FAQ or relevant help articles. This ensures users
 receive quick assiatance while reducing the need for manual support intervention.
 
 
+
 4️⃣ **End-of-Day Report for Unresolved Tickets**
-⏰ At the end of the workday, the automation:
-Filters all unresolved tickets from Google Sheets.
-Sends a summary to Slack (e.g., “🚨 5 Unresolved Tickets Today”).
+⏰ At the end of the workday, make.com:
+- Filters all unresolved tickets from Google Sheets.
+- Sends a summary to Slack (e.g., “🚨 5 Unresolved Tickets Today”).
+
+ ## Ticket Severity Categorization Logic
+To improve response time and deliver customer-focused support, this automation uses keyword-based logic to classify incoming tickets into three priority levels: High, Medium, and Low. Each level reflects the urgency and potential impact of the issue on the user’s experience or workflow.
+
+**High Priority:**
+Tickets are marked as high priority when they indicate a critical failure or complete disruption of core functionality. Keywords like "not working", "urgent", "site is down", or "can't access" are strong indicators.
+
+**Additionally,** any follow-up ticket or repeat message from a customer without resolution is automatically escalated to high priority. This prevents user frustration and ensures we re-engage promptly to rebuild trust.
+
+**Examples:**
+
+- “I can’t log in to my account — says error 403.”
+
+- “Our dashboard is down, and we can’t access customer data.”
+
+- “Still waiting on a fix — is anyone seeing my messages?”
+
+**Medium Priority:**
+These tickets involve issues that affect some functionality but do not fully block the user. Keywords like "error", "broken", "glitch", or "not displaying correctly" are commonly found here.
+
+**Examples:**
+
+- “Charts are not loading correctly on the analytics page.”
+
+- “I’m getting a pop-up error when I upload files.”
+
+- “The filter is buggy but I can still use the page.”
+
+**Low Priority:**
+Low-priority tickets typically consist of inquiries, minor requests, or feedback that can be addressed through existing documentation or standard responses. These tickets often include keywords like "how", "setup", "request", "feedback", or "question".
+
+**Examples:**
+
+- “How do I reset my password?”
+
+- “Can you help me set up email alerts?”
+
+- “Just a suggestion — it’d be nice to export reports as CSV.”
+
+This structured classification helps route tickets efficiently, reduce first response time for high-impact issues, and improve overall service quality. The use of automation ensures consistency in triage while allowing the support team to focus on what matters most.
 
 ## 🚀  How This Automation Improves Efficiency
 This automation significantly streamlines the support workflow in the following ways:
 
-⏱️ **Faster Response Times:**
+1.⏱️ **Faster Response Times:**
 High- and medium-priority tickets trigger instant, personalized email replies and Slack notifications, ensuring urgent issues are acknowledged and addressed promptly.
 
-📚 **Self-Service for Common Questions:**
+2.📚 **Self-Service for Common Questions:**
 Low-priority tickets are automatically filtered based on keywords (e.g., “how,” “set up”), and users receive an email with helpful links to the FAQ or knowledge base. This reduces repetitive inquiries and empowers users to find answers on their own.
 
-📊 **Real-Time Tracking:**
+3.📊 **Real-Time Tracking:**
 Every ticket is logged in Google Sheets, making it easy to monitor, categorize, and analyze trends without manual entry.
 
-🕓 **End-of-Day Summary:**
+4.🕓 **End-of-Day Summary:**
 A daily summary of unresolved tickets is automatically sent to a Slack channel, helping teams stay on top of outstanding issues without needing to dig through spreadsheets or inboxes.
 
-🧠 **Reduced Manual Work:**
+5.🧠 **Reduced Manual Work:**
 By automating repetitive tasks like email replies, ticket logging, and Slack alerts, the team can focus on solving complex problems rather than frequently wasting time on repetitive tasks.
 
-🔹 **Impact-Driven:**
+6.🔹 **Impact-Driven:**
 This automation is a step toward building a more efficient, proactive support system—reducing time to response, improving follow-up, and ultimately driving customer satisfaction.
+
+### Through this project, I deepened my understanding of:
+
+- Workflow design using Make.com
+
+- Priority-based ticket classification logic
+
+- Real-world use of Slack integrations, email automation, and data parsing
+
+- The value of proactive communication in customer satisfaction
+
+ ## Conclusion
+This automation significantly improves the efficiency of customer support operations by eliminating manual triaging, reducing response time for critical issues, and ensuring consistent communication through Slack and email. By leveraging tools like Google Forms, Sheets, and Make.com, repetitive tasks are streamlined, allowing the support team to focus on more complex and meaningful customer interactions.
+This experience reinforced how automation can directly align with business goals — boosting team productivity, improving customer trust, and maintaining service quality at scale.
 
 
 
