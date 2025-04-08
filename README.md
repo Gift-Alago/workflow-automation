@@ -70,7 +70,13 @@ receive quick assiatance while reducing the need for manual support intervention
 
 Example:
 A customer submits a google form,asking how to reset passoword
+![Email sent to customer](./assets/google-form7.png)  
+ ![Email sent to customer](./assets/google-form8.png)
+
 2.The ticket is logged into google sheets
+
+   ![Email sent to customer](./assets/email-response6.png)
+
 
 3.**An email is sent to the customer immediately with the response they need and a link to the FAQ**
 
