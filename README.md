@@ -33,7 +33,9 @@ With this workflow automation, urgent issues get immediate attention while unres
 
 ## ⚙️ How It Works
 1️⃣ **Trigger:** Ticket Submission (Google Form)
-A customer submits a Google Form when they have an issue.
+A customer submits a Google Form when they have an issue,which is used to create a ticket
+
+   ![Email sent to customer](./assets/google-sheet.png)
 
 The response is logged in Google Sheets automatically.
 
