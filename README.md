@@ -34,7 +34,10 @@ With this workflow automation, urgent issues get immediate attention while unres
 ## ⚙️ How It Works
 1️⃣ **Trigger:** Ticket Submission (Google Form)
 A customer submits a Google Form when they have an issue.
-The response is stored in Google Sheets automatically.
+
+The response is logged in Google Sheets automatically.
+
+   ![Email sent to customer](./assets/google-sheet.png)
 
 2️⃣ **Data Processing & Categorization**
 A Text Parser scans the ticket description and determines priority:
@@ -44,14 +47,16 @@ A Text Parser scans the ticket description and determines priority:
 
 3️⃣ **Automated Actions**
 **(Make.com Modules)**
+
+
+**Slack Alert to Support Team:** Once the ticket has been created,details of the ticket is sent to high-priority slack channel.
+
+   ![Email sent to customer](./assets/slack-alert.png)
  
  - **High-Priority Tickets:** For high-priority tickets, a personalized email is sent to the customer immediately, assuring them that a ticket has been created and its already being looked into.
 
    ![Email sent to customer](./assets/email-response.png)
 
-**Slack Alert to Support Team:** Once the ticket has been created,details of the ticket is sent to high-priority slack channel.
-
-   ![Email sent to customer](./assets/slack-alert.png)
 
 - **Medium-Priority Tickets:** For medium-priority tickets a personalized email is sent to the customer immediately, assuring them that a ticket has been created and its already being looked into.
 
