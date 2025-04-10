@@ -8,6 +8,8 @@ Before starting, ensure you have:
 
 ✅ A Slack workspace (with a webhook set up).
 
+ ![Google form](./assets/test-auto.png)
+
  ### 2️⃣ Setup Instructions
  
  **Step 1: Create a Google Form for Ticket Submission**
