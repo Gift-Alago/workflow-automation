@@ -21,7 +21,7 @@ Yet, companies still struggle:
 - Delays in response time are the #1 cause of low satisfaction scores in customer service (HubSpot, 2023).
 
 **Why This Matters for Business Outcomes**
-Let’s tie this back to results:
+
 
 - McKinsey found that companies using automation in customer support saw 30%–50% improvement in response speed and resolution time.
 - "Businesses lose $62 billion each year due to poor customer service — much of that is from delayed or non-personalized responses|" --NewVoiceMedia.
@@ -45,6 +45,7 @@ With this workflow automation, urgent issues get immediate attention while unres
 | **Slack API (via Make.com)** | Sends real-time notifications to relevant channels |  
 | **Email Notifications (via Make.com)** | Sends automated responses to customers |  
 
+
 ## ⚙️ How It Works
 1️⃣ **Trigger:** Ticket Submission (Google Form)
 A customer submits a Google Form when they have an issue,which is used to create a ticket
@@ -55,13 +56,13 @@ A customer submits a Google Form when they have an issue,which is used to create
 
    ![Email sent to customer](./assets/goole-sheet.png)
 
-2️⃣ **Data Processing & Categorization**
+### 2️⃣ Data Processing & Categorization
 A Text Parser scans the ticket description and determines priority:
 - High Priority → Contains words like "not working", "urgent", "site is down", or "can't access".
 - Medium Priority → Contains words like "error", "broken", "glitch", or "not displaying correctly".
 - Low Priority → Contains word like "how", "setup", "request", "feedback", or "question", typically indicating general inquirires.These are often questions already covered in the FAQ, making them suitable for self-service resolution.
 
-3️⃣ **Automated Actions**
+### 3️⃣ Automated Actions
 **(Make.com Modules)**
 
 
@@ -82,12 +83,13 @@ A Text Parser scans the ticket description and determines priority:
 When a low-priority ticket is detected, an automated email response is sent, providing a link to the FAQ or relevant help articles. This ensures users
 receive quick assiatance while reducing the need for manual support intervention.
 
-Example:
-A customer submits a google form,asking how to reset passoword
+**Example:**
+
+1. **A customer submits a google form,asking how to reset passoword**
 ![Email sent to customer](./assets/google-form7.png)  
  ![Email sent to customer](./assets/google-form8.png)
 
-2.The ticket is logged into google sheets
+2.**The ticket is logged into google sheets**
 
    ![Email sent to customer](./assets/email-response6.png)
 
@@ -104,6 +106,8 @@ A customer submits a google form,asking how to reset passoword
 ⏰ At the end of the workday, make.com:
 - Filters all unresolved tickets from Google Sheets.
 - Sends a summary to Slack (e.g., “🚨 5 Unresolved Tickets Today”).
+   ![Email sent to customer](./assets/unresolved-ticket.png)
+
 
  ## Ticket Severity Categorization Logic
 To improve response time and deliver customer-focused support, this automation uses keyword-based logic to classify incoming tickets into three priority levels: High, Medium, and Low. Each level reflects the urgency and potential impact of the issue on the user’s experience or workflow.
@@ -166,7 +170,7 @@ By automating repetitive tasks like email replies, ticket logging, and Slack ale
 6.🔹 **Impact-Driven:**
 This automation is a step toward building a more efficient, proactive support system—reducing time to response, improving follow-up, and ultimately driving customer satisfaction.
 
-### Through this project, I deepened my understanding of:
+## Through this project, I deepened my understanding of:
 
 - Workflow design using Make.com
 
@@ -175,6 +179,19 @@ This automation is a step toward building a more efficient, proactive support sy
 - Real-world use of Slack integrations, email automation, and data parsing
 
 - The value of proactive communication in customer satisfaction
+
+ ## Potential Improvements
+While this workflow uses tools like Google Forms, Sheets, and Slack to streamline ticket handling, it can be further enhanced by integrating with dedicated support platforms like Zendesk, Freshdesk, or HubSpot Service Hub. These platforms offer:
+
+1.Built-in ticket management and tracking
+
+2.Automated SLAs and customer history
+
+3.Multi-channel support (email, chat, social media)
+
+4.Advanced analytics for support performance
+
+Integrating this automation into a full-fledged support system would increase scalability, improve team collaboration, and deliver even better customer insights.
 
  ## Conclusion
 This automation significantly improves the efficiency of customer support operations by eliminating manual triaging, reducing response time for critical issues, and ensuring consistent communication through Slack and email. By leveraging tools like Google Forms, Sheets, and Make.com, repetitive tasks are streamlined, allowing the support team to focus on more complex and meaningful customer interactions.
