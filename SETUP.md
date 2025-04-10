@@ -16,7 +16,9 @@ Go to Google Forms and create a new form.
 Add fields like Name, Contact, Email, Ticket Subject,Issue description.
 
 📌 Example:
-![Google form!](./assets/
+ ![Google form](./assets/create-ticket.png)
+ ![Google form](./assets/create-ticket2.png)
+ 
 
 **Step 2: Connect Google Forms to Make.com**
 Create a new scenario in Make.com.
@@ -47,6 +49,7 @@ Create a Google Sheet with columns:
 ✅ Date
 
 📌 Example:
+![Google form](./assets/ticket-log.png)
 
 **Step 4: Add a Text Parser for Ticket Prioritization**
 Add the Text Parser module in Make.com.
