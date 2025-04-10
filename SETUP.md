@@ -1,4 +1,5 @@
 ## 🚀 How to Set Up This Automation
+
 1️⃣ **Prerequisites**
 Before starting, ensure you have:
 ✅ A Make.com account for automation.
@@ -12,9 +13,10 @@ Before starting, ensure you have:
  **Step 1: Create a Google Form for Ticket Submission**
 Go to Google Forms and create a new form.
 
-Add fields like Name, Email, Issue Description, and Priority Level.
+Add fields like Name, Contact, Email, Ticket Subject,Issue description.
 
 📌 Example:
+![Google form!](./assets/
 
 **Step 2: Connect Google Forms to Make.com**
 Create a new scenario in Make.com.
@@ -50,6 +52,14 @@ Create a Google Sheet with columns:
 Add the Text Parser module in Make.com.
 
 Define keywords for High, Medium, and Low Priority.
+
+A text parser scans the ticket description and assigns a priority level:
+
+- High Priority → Contains words like “urgent” or “critical.”
+
+- Medium Priority → Contains words like “issue” or “bug.”
+
+- Low Priority → No major keywords detected.
 
 **Step 5: Automate Slack & Email Notifications**
 Add Slack Webhook module → Send alerts to the correct channel.
