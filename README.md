@@ -1,7 +1,7 @@
 #  Support Ticket Workflow-Automation 
 
 ## 📌  Introduction
-**Customer Support Shouldn't Be Robotic**
+**Customer Support Shouldn't Be Robotic!**
 
 Traditional customer  support is filled with repetitive tasks like sorting tickets and sending the same replies.But support should be exciting--every day brings new challenge to solve.This automation cuts through the noise by handling routine tasks,prioritizing urgent isues, and instantly notifying the right team.**The result? Faster response, less manual work, and better customer experience**
 
@@ -60,7 +60,7 @@ A customer submits a Google Form when they have an issue,which is used to create
 A Text Parser scans the ticket description and determines priority:
 - High Priority → Contains words like "not working", "urgent", "site is down", or "can't access".
 - Medium Priority → Contains words like "error", "broken", "glitch", or "not displaying correctly".
-- Low Priority → Contains word like "how", "setup", "request", "feedback", or "question", typically indicating general inquirires.These are often questions already covered in the FAQ, making them suitable for self-service resolution.
+- Low Priority → Contains word like "how", "setup", "request", "feedback", or "question", typically indicating general inquiries.These are often questions already covered in the FAQ, making them suitable for self-service resolution.
 
 ### 3️⃣ Automated Actions
 **(Make.com Modules)**
