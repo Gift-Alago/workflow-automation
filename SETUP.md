@@ -1,4 +1,4 @@
-# How to Set Up the [Workflow Name] in Make (Integromat)
+## How to Set Up the [Support Ticket Workflow-Automation] in Make
 ### Overview
 This workflow automates the process from a submitted Google Form through various actions like parsing, updating Google Sheets, sending emails via Gmail, and notifying on Slack. This is useful for managing form responses, categorizing them, and automating follow-ups.
 
