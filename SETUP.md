@@ -1,101 +1,112 @@
-## How to Set Up the [Support Ticket Workflow-Automation] in Make
-### Overview
-This workflow automates the process from a submitted Google Form through various actions like parsing, updating Google Sheets, sending emails via Gmail, and notifying on Slack. This is useful for managing ticket responses, categorizing them, and automating follow-ups.
+# 🚀 Set Up a Smart Support Ticket Workflow Automation in Make (formerly Integromat)
+Looking to take the manual effort out of managing support tickets? This workflow automates everything — from the moment a user submits a Google Form to follow-ups via Gmail and team notifications on Slack. Whether you're managing support solo or with a team, this setup saves you time, keeps things organized, and ensures no ticket slips through the cracks.
 
-**Before we dive into the setup, here’s what the complete workflow looks like in Make:**
- 
- ![Google form](./assets/test-auto.png)
-
-This gives you a sense of how the modules are connected — from Google Forms, through Sheets and routers, all the way to Gmail and Slack. We’ll break this down step by step below.
-
-# Tools Used
-- Google Forms
-- Google Sheets
-- Make (Integromat)
-- Gmail
-- Slack
-- Text Parser
-
-##   1. Trigger: Google Forms Submission
-- Module: Google Forms → Watch Responses
-- This starts the scenario when someone submits a response.
-
-##  2. Log Response in Google Sheets
-- Module: Google Sheets → Add Row
-- The response data is stored here for record-keeping
-
- **Example:** Create a Google Sheet with required columns:
-
-- First Name
-
-- Last Name
-
-- Contact
-
-- Email
-
-- Ticket subject
-
-- Issue Description
-
-- Priority
-
-- Resolved
-
-- Unresolved
-
-- Date
-
-## 3. Router
--  Module: Router
-- Splits the flow based on conditions or logic (eg;the row number doesn't or does exist; that means if the ticket has been logged before if goes to the first route (add to row) if otherwise if goes to the next(update row) ).
-
-## 4. Text Parser (Multiple Paths)
-- Module: Text Parser (Custom Text / Keywords / Conditions)
-- Used to extract specific information or categorize responses.
-
-**Example:It detect keywords from the issue description, and determines the priority for each of the paths**
-- High Priority → Contains words like "not working", "urgent", "site is down", or "can't access".
-- Medium Priority → Contains words like "error", "broken", "glitch", or "not displaying correctly".
-- Low Priority → Contains word like "how", "setup", "request", "feedback", or "question", typically indicating general inquiries.These are often questions already covered in the FAQ, making them suitable for self-service resolution.
+---
+## 🧩 What the Workflow Looks Like
+Here’s a quick glance at how the automation flows inside Make:
 
 
- ## 5. Google Sheets Updates 
-- Module: Google Sheets → Update Cell(s)
-- Used to update a row that  exist already
 
-  **Example:** if a customer creates a ticket and it probably hasn't been resolved and then they create another ticket for the same issue, the row will be updated instead of added to avoid duplicates
+From Google Form submissions to Sheets, Routers, Text Parsing, Gmail, and Slack — every step is connected to keep your support system running smoothly.
 
- ## 6. Gmail: Send Follow-up 
-- Module: Gmail → Send Email
-- After logging and parsing, this module sends an automated follow-up to the user.
+---
+## 🛠️ Tools You'll Need
+- Google Forms – for collecting ticket submissions
+- Google Sheets – to log and track ticket details
+- Make (Integromat) – the automation engine
+- Gmail – for automated follow-up emails
+- Slack – for real-time team notifications
+- Text Parser – to detect issue types and assign priority
+---
 
- **Example:**
-- Once a customer creates a ticket, an email is sent to them assuring them that they are being heard and the issue 
-  is being addressed.
+## ⚙️ Step-by-Step Setup
+### 1. 🔔 Trigger: Google Form Submission
+Module: Google Forms → Watch Responses
 
- ## 7. Slack Notification
-- Module: Slack → Send Message
-- Sends summary or  alert to a Slack channel for high priority tickets and unresolved tickets
+> Kicks off the automation whenever a new response is submitted.
 
- **Example:**
-  - When a high priority ticket is detected the team gets an alert in the slack channel,to enable immediate approach as a 
-  team.
-  - After the days work, list of unresolved tickets are sent to another slack channel to notify team members so  they start the next day resolving those tickets as quickly as possible.
+### 2. 📊 Log the Response in Google Sheets
+Module: Google Sheets → Add Row
 
-  ## How to Customize
-- Text Parser: Adjust the conditions/keywords based on your use case.
-- Router: You can add more branches if you want to handle different kinds of responses differently.
-- Gmail/Slack: Customize the message templates and recipients.
+> Stores the submitted data for tracking and future reference.
 
-  ## Run Settings
-- Schedule:runs Every 15 minutes
-- For unresolved ticket, runs after work hours eg; 5:00pm
+Suggested Sheet Columns:
 
-  ## Tips
-- Use variable names that match the form questions for clarity.
-- Test each module one at a time to catch errors early.
-- Label each module in Make to avoid confusion when troubleshooting.
+1. First Name
+2. Last Name
+3. Contact
+4. Email
+5. Ticket Subject
+6. Issue Description
+7. Priority
+8. Resolved / Unresolved
+9. Date
+---
+
+### 3. 🔁 Route Based on Logic
+Module: Router
+
+> Splits the workflow depending on whether the ticket already exists.
+- ✅ If the ticket is new, it’s added as a fresh row.
+- 🔁 If it's a follow-up on an unresolved issue, the existing row is updated instead.
+---
+### 4. 🧠 Text Parser – Categorize and Prioritize
+Module: Text Parser
+
+> Automatically detects keywords from the issue description and sets the ticket's priority.
+
+#### Example Conditions:
+
+- High Priority – phrases like “not working”, “urgent”, “site is down”, “can’t access”
+- Medium Priority – “error”, “glitch”, “broken”, “not displaying”
+- Low Priority – “how”, “setup”, “feedback”, “question” (often FAQ-type inquiries)
+---
+
+### 5. 🔄 Update Existing Rows in Sheets
+Module: Google Sheets → Update Cells
+
+> Ensures follow-up tickets don’t get logged as duplicates by updating the existing row instead.
+----
+### 6. 📧 Send an Automated Email
+Module: Gmail → Send Email
+
+> Immediately follows up with the user to confirm receipt and provide reassurance.
+
+#### Example Message:
+"Thanks for reaching out — we’ve received your ticket and are on it. Our team will follow up shortly."
+
+---
+### 7. 💬 Notify the Team on Slack
+Module: Slack → Send Message
+
+> Alerts the team about high-priority or unresolved tickets.
+
+#### Examples:
+
+> High-priority tickets trigger real-time alerts in a shared support channel.
+
+- At the end of the day, unresolved tickets are summarized in a message to help prioritize the next day’s tasks.
+----
+### 🛠️ Customize It Your Way
+> Text Parser: Update the keywords/logic to fit your support style.
+
+> Router: Add more branches for different ticket types or priorities.
+
+> Gmail & Slack: Customize your email templates and Slack channels to fit your team’s workflow.
+
+### ⏱️ Run Settings
+- Main Scenario: Runs every 15 minutes
+
+- Unresolved Tickets Summary: Triggers at the end of each workday (e.g., 5:00 PM)
+
+### 💡 Pro Tips
+- Match variable names with your form fields for clarity
+
+- Test each module independently to catch issues early
+
+- Label every module in Make — future-you will thank you when troubleshooting!
+
+
 
 
 
