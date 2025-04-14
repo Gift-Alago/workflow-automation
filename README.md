@@ -1,20 +1,137 @@
-#  Support Ticket Workflow-Automation 
+# 🎯 Support Ticket Workflow Automation
 
-## 📌  Introduction
+## 📌 Overview
+
 **Customer Support Shouldn't Be Robotic!**
 
-Traditional customer  support is filled with repetitive tasks like sorting tickets and sending the same replies.But support should be exciting--every day brings new challenge to solve.This automation cuts through the noise by handling routine tasks,prioritizing urgent isues, and instantly notifying the right team.**The result? Faster response, less manual work, and better customer experience**
+Traditional customer support often involves repetitive tasks: sorting tickets, assigning priority, and replying to the same inquiries. This automation eliminates busywork by:
+
+- Automatically categorizing incoming tickets by urgency
+- Notifying the right team via Slack in real-time
+- Sending personalized emails instantly
+- Summarizing unresolved tickets at the end of the day
+
+**Result?** Faster response, fewer manual steps, and improved customer experience.
+
+---
+
+## 💡 Why This Matters
+
+In a digital-first world, fast, proactive support equals **customer retention and revenue**.
+
+> 🧾 According to Zendesk (2023):  
+> - 83% of customers expect immediate support.  
+> - 60% will switch providers after just one or two bad experiences.
+
+> 🧾 McKinsey found automation improves response and resolution time by up to **50%**.
+
+Yet, over **50%** of support teams still use manual routing (Freshdesk, 2022).  
+This project tackles that challenge directly.
+
+---
+
+## 🛠️ Tech Stack
+
+| Tool                        | Purpose                                   |
+|-----------------------------|-------------------------------------------|
+| **Make.com**                | Workflow and automation engine            |
+| **Google Forms**            | Customer ticket submission form           |
+| **Google Sheets**           | Ticket database and tracking              |
+| **Text Parser (Make.com)**  | Extracts priority keywords                |
+| **Slack API via Make.com**  | Real-time team notifications              |
+| **Email via Make.com**      | Sends automated, personalized responses   |
+| **Google Apps Script** (opt)| Custom logic or data formatting           |
+
+---
+
+## ⚙️ Workflow Overview
+
+### 1️⃣ Ticket Submission via Google Form
+
+Customers submit issues through a Google Form.  
+Responses are auto-logged into Google Sheets.
+
+📸 **EXAMPLE:**
+
+#### Google Form
+
+![Google Form](./assets/google-sheet5.png)      ![Google Form](./assets/google-sheet3.png)
+
+#### Sheet Logging
+
+![Sheet Logging](./assets/goole-sheet.png)
 
 
- ## 💡 Why This System?
- In today's digital-first economy, customer support speed and efficiency directly impact retention, satisfaction, and revenue.
 
-According to a 2023 Zendesk Customer Experience Trends Report:
+---
 
-83% of customers expect to interact with someone immediately when contacting a company.
-And 60% will switch to a competitor after just one or two bad experiences.
+### 2️⃣ Automatic Categorization via Text Parser
 
-Yet, companies still struggle:
+Based on keywords, tickets are automatically tagged as:
+
+| Priority Level | Keyword Examples |
+|----------------|------------------|
+| High           | "urgent", "site is down", "not working"  |
+| Medium         | "error", "broken", "glitch"              |
+| Low            | "how", "setup", "feedback", "question"   |
+
+> 🔁 Follow-up messages without resolution are **auto-escalated** to High Priority.
+
+---
+
+### 3️⃣ Automated Actions Based on Priority
+
+#### 🟥 High Priority
+- Slack notification to `#High-priority`
+  ![Email sent to customer](./assets/slack-alert.png)
+
+- Personalized confirmation email to the customer
+
+   ![Email sent to customer](./assets/email-response.png)
+
+#### 🟧 Medium Priority
+- Slack notification to `#support-tickets`
+- Customer receives a response acknowledging the issue
+
+#### 🟩 Low Priority
+- Customer receives an email with:
+  - Help article links (e.g., password reset, how-tos)
+  - Invitation to visit the FAQ
+
+    📸 Example:
+
+> A customer asks: _"How do I reset my password?"_
+
+- Auto-email response with instructions and FAQ link  
+
+![Auto-response](./assets/email-response3.png)
+
+---
+
+### 4️⃣ End-of-Day Report
+
+At the end of each workday:
+- Google Sheets is checked for unresolved tickets
+- A Slack message is sent to summarize pending items
+
+📸 Example:
+> 🚨 "3 Unresolved Tickets Today"
+![Unresoled tickets](./assets/unresolved-ticket.png)
+
+---
+
+
+
+
+
+
+
+
+
+
+#  Support Ticket Workflow-Automation 
+
+
 
 - Over 50% of support teams still rely on manual triaging and routing of tickets (Freshdesk Report, 2022).
 
