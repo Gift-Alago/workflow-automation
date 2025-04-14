@@ -17,7 +17,7 @@ Traditional customer support often involves repetitive tasks: sorting tickets, a
 
 ## 💡 Why This Matters
 
-In a digital-first world, fast, proactive support equals **customer retention and revenue**.
+In a digital-first world, fast proactive support equals **customer retention and revenue**.
 
 > 🧾 According to Zendesk (2023):  
 > - 83% of customers expect immediate support.  
