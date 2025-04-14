@@ -5,7 +5,7 @@ Looking to take the manual effort out of managing support tickets? This workflow
 ## 🧩 What the Workflow Looks Like
 Here’s a quick glance at how the automation flows inside Make:
 
-
+![automation flow](./assets/test-auto.png)
 
 From Google Form submissions to Sheets, Routers, Text Parsing, Gmail, and Slack — every step is connected to keep your support system running smoothly.
 
